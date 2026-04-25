@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="canonical" href="/" id="canonical-link" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="application-name" content="Json Toolkit" />
+    <meta name="apple-mobile-web-app-title" content="Json Toolkit" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="author" content="Bilal Abdulhadi" />
+    <meta
+      name="keywords"
+      content="JSON formatter, JSON validator, JSON viewer, JSON minifier, JSON prettifier, developer tools, online JSON tool"
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#0D0D0D" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="description"
+      content="Json Toolkit is a fast browser-based JSON formatter, validator, viewer, and minifier with raw and tree views. Everything runs locally in your browser."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Json Toolkit" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:title"
+      content="Json Toolkit | Format, Validate, View, and Minify JSON"
+    />
+    <meta
+      property="og:description"
+      content="Format, validate, minify, and inspect JSON in a fast browser-based developer workspace."
+    />
+    <meta property="og:url" content="/" id="meta-og-url" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo.png" id="meta-og-image" />
+    <meta property="og:image:alt" content="Json Toolkit logo" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Json Toolkit | Format, Validate, View, and Minify JSON"
+    />
+    <meta
+      name="twitter:description"
+      content="A minimal browser-based JSON toolkit for formatting, validating, minifying, and exploring structured data."
+    />
+    <meta name="twitter:image" content="%PUBLIC_URL%/logo.png" id="meta-twitter-image" />
+    <style>
+      html {
+        background: #0d0d0d;
+        color: #f8f8f8;
+        color-scheme: dark;
+      }
+
+      html[data-theme="light"] {
+        background: #ffffff;
+        color: #0d0d0d;
+        color-scheme: light;
+      }
+
+      body {
+        margin: 0;
+        background: transparent;
+        color: inherit;
+      }
+    </style>
+    <script>
+      (function () {
+        var theme = "dark";
+        var themeKey = "json-toolkit-theme";
+
+        try {
+          var storedTheme = window.localStorage.getItem(themeKey);
+
+          if (storedTheme === "light" || storedTheme === "dark") {
+            theme = storedTheme;
+          }
+        } catch (error) {}
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document.documentElement.style.backgroundColor =
+          theme === "dark" ? "#0D0D0D" : "#FFFFFF";
+        document.documentElement.style.color =
+          theme === "dark" ? "#F8F8F8" : "#0D0D0D";
+
+        var themeMeta = document.querySelector('meta[name="theme-color"]');
+        var canonicalLink = document.getElementById("canonical-link");
+        var ogUrlMeta = document.getElementById("meta-og-url");
+        var ogImageMeta = document.getElementById("meta-og-image");
+        var twitterImageMeta = document.getElementById("meta-twitter-image");
+        var currentUrl = window.location.href.split("#")[0];
+        var absoluteLogoUrl = new URL(
+          "%PUBLIC_URL%/logo.png",
+          window.location.origin
+        ).toString();
+
+        if (themeMeta) {
+          themeMeta.setAttribute(
+            "content",
+            theme === "dark" ? "#0D0D0D" : "#FFFFFF"
+          );
+        }
+
+        if (canonicalLink) {
+          canonicalLink.setAttribute("href", currentUrl);
+        }
+
+        if (ogUrlMeta) {
+          ogUrlMeta.setAttribute("content", currentUrl);
+        }
+
+        if (ogImageMeta) {
+          ogImageMeta.setAttribute("content", absoluteLogoUrl);
+        }
+
+        if (twitterImageMeta) {
+          twitterImageMeta.setAttribute("content", absoluteLogoUrl);
+        }
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Json Toolkit",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript and a modern browser",
+        "description": "A browser-based JSON formatter, validator, viewer, and minifier for developers.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "creator": {
+          "@type": "Person",
+          "name": "Bilal Abdulhadi",
+          "url": "https://bilalabdulhadi.com",
+          "sameAs": [
+            "https://github.com/bilalabdulhadii/",
+            "https://www.linkedin.com/in/bilalabdulhadii/",
+            "https://www.instagram.com/bilalabdulhadii/",
+            "https://www.facebook.com/bilalabdulhadii/"
+          ]
+        }
+      }
+    </script>
+    <title>Json Toolkit | Format, Validate, View, and Minify JSON</title>
+  </head>
+  <body>
+    <noscript>
+      Json Toolkit formats, validates, minifies, and explores JSON directly in
+      your browser. Enable JavaScript to use the app.
+    </noscript>
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+.app-footer {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    background: var(--background);
+    color: var(--text-soft);
+    text-align: center;
+    font-size: 12px;
+}
+
+.app-footer p {
+    margin: 0;
+}
+
+.app-footer a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 160ms ease;
+}
+
+.app-footer a:hover {
+    color: var(--accent);
+}

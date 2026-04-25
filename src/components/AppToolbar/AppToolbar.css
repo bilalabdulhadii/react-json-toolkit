@@ -1,0 +1,68 @@
+.app-toolbar {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 25;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 8px clamp(12px, 2.5vw, 18px);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-elevated);
+}
+
+.toolbar-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.toolbar-group--secondary {
+    margin-left: auto;
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+.mode-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 12px;
+    border-left: 1px solid var(--border);
+}
+
+@media (max-width: 780px) {
+    .toolbar-spacer {
+        display: none;
+    }
+
+    .toolbar-group--secondary {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .mode-switch {
+        padding-left: 0;
+        border-left: 0;
+    }
+}
+
+@media (max-width: 479px) {
+    .app-toolbar {
+        gap: 8px;
+        padding-inline: 12px;
+    }
+
+    .toolbar-group,
+    .mode-switch {
+        gap: 6px;
+    }
+
+    .tool-button {
+        padding-inline: 9px;
+    }
+}

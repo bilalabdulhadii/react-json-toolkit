@@ -1,0 +1,65 @@
+{
+  "name": "json-toolkit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A fast browser-based JSON formatter, validator, minifier, and viewer built with React.",
+  "author": "Bilal Abdulhadi <bilalabdulhadi88@gmail.com> (https://bilalabdulhadi.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bilalabdulhadii/react-json-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bilalabdulhadii/react-json-toolkit/issues"
+  },
+  "keywords": [
+    "json",
+    "json formatter",
+    "json validator",
+    "json viewer",
+    "json minifier",
+    "react",
+    "developer tool"
+  ],
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "dependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^13.5.0",
+    "clsx": "^2.1.1",
+    "file-saver": "^2.0.5",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-icons": "^5.6.0",
+    "react-json-view": "^1.21.3",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test:ci": "CI=true react-scripts test --watch=false",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

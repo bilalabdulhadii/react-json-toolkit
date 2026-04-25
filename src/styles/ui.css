@@ -1,0 +1,107 @@
+:root {
+    --toolbar-height: 49px;
+    --pane-header-height: 44px;
+    --code-line-height: 24px;
+    --content-padding: clamp(12px, 2vw, 18px);
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --transition-fast: 160ms ease;
+}
+
+.icon-button,
+.tool-button {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface-elevated);
+    color: var(--text);
+    transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        color var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+.icon-button {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tool-button {
+    min-height: 32px;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+.tool-button--compact {
+    min-height: 32px;
+}
+
+.tool-button--file {
+    cursor: pointer;
+}
+
+.tool-button--active {
+    border-color: rgba(30, 144, 255, 0.3);
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+.tool-button--danger {
+    color: var(--danger);
+}
+
+.icon-button svg,
+.tool-button svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+}
+
+.icon-button:hover:not(:disabled),
+.tool-button:hover:not(:disabled) {
+    background: var(--surface);
+    border-color: var(--border-strong);
+}
+
+.icon-button:focus-visible,
+.tool-button:focus-visible,
+.social-link:focus-visible,
+.viewer-toggle:focus-visible,
+.viewer-copy:focus-visible,
+.brand-button:focus-visible {
+    outline: 2px solid rgba(30, 144, 255, 0.45);
+    outline-offset: 2px;
+}
+
+.icon-button:disabled,
+.tool-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.tool-button__label {
+    line-height: 1;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
